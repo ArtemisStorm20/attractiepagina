@@ -24,6 +24,18 @@ if($action == 'create')
         $errors[] = "Vul een themagebied in!";
     }
 
+    $description = $_POST['description'];
+    if(empty($description))
+    {
+        $errors[] = "Vul een beschrijving in!";
+    }
+
+    $min_length = $_POST['min_length'];
+    if($min_length === '' || !is_numeric($min_length) || $min_length < 0)
+    {
+        $errors[] = "Vul een geldige minimale lengte in!";
+    }
+
     if(isset($_POST['fast_pass']))
     {
         $fast_pass = true;
@@ -52,11 +64,13 @@ if($action == 'create')
 
     //Query
     require_once 'conn.php';
-    $query = "INSERT INTO rides (title, themeland, fast_pass, img_file) VALUES(:title, :themeland, :fast_pass, :img_file)";
+    $query = "INSERT INTO rides (title, themeland, description, min_length, fast_pass, img_file) VALUES(:title, :themeland, :description, :min_length, :fast_pass, :img_file)";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":title" => $title,
         ":themeland" => $themeland,
+        ":description" => $description,
+        ":min_length" => $min_length,
         ":fast_pass" => $fast_pass,
         ":img_file" => $target_file,
     ]);
@@ -70,6 +84,8 @@ if($action == "update")
     $id = $_POST['id'];
     $title = $_POST['title'];
     $themeland = $_POST['themeland'];
+    $description = $_POST['description'];
+    $min_length = $_POST['min_length'];
     if(isset($_POST['fast_pass']))
     {
         $fast_pass = true;
@@ -105,11 +121,13 @@ if($action == "update")
 
     //Query
     require_once 'conn.php';
-    $query = "UPDATE rides SET title = :title, themeland = :themeland, fast_pass = :fast_pass, img_file = :img_file WHERE id = :id";
+    $query = "UPDATE rides SET title = :title, themeland = :themeland, description = :description, min_length = :min_length, fast_pass = :fast_pass, img_file = :img_file WHERE id = :id";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":title" => $title,
         ":themeland" => $themeland,
+        ":description" => $description,
+        ":min_length" => $min_length,
         ":fast_pass" => $fast_pass,
         ":img_file" => $target_file,
         ":id" => $id
