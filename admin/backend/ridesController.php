@@ -84,6 +84,17 @@ if($action == "update")
     $id = $_POST['id'];
     $title = $_POST['title'];
     $themeland = $_POST['themeland'];
+
+    // Validation
+    if(empty($title))
+    {
+        $errors[] = "Vul een titel in!";
+    }
+    if(empty($themeland))
+    {
+        $errors[] = "Vul een themagebied in!";
+    }
+
     $description = $_POST['description'];
     $min_length = $_POST['min_length'];
     if(isset($_POST['fast_pass']))
