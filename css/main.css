@@ -375,7 +375,12 @@ table tr:hover {
 }
 
 table th {
-  background-color: #4CAF50;
+  background-color: #458f48;
   color: white;
   text-align: left;
+}
+table a{
+  color: #458f48;
+  text-decoration: none;
+  font-weight: bold;
 }
