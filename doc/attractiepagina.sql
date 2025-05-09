@@ -59,3 +59,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`username`, `password`) VALUES ('user1', '$2y$10$E1RRrlkzSBf9gUJrJZgYl.sXnqLBcWbEm.bBX30TcKS.NCEYaoo7q');
 INSERT INTO `users` (`username`, `password`) VALUES ('user2', '$2y$10$5c9ztGrjrt/iFtTWfyq1p.KVxzEQd/C8YKkesSMy3NVbmHnaRRrrO');
 INSERT INTO `users` (`username`, `password`) VALUES ('user3', '$2y$10$2H8uaI4z/sGH.fIlAsCxquUVLB4f9nLhad..NnfjDE4eemi3ufMUO');
+users
