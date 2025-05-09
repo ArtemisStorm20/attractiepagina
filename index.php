@@ -36,12 +36,22 @@ require_once 'admin/backend/config.php';
                 <div class="attraction-card">
                     <div class="card-image">
                         <!-- Placeholder voor attractie afbeelding -->
+                         <div class="card-image">
+                        <img src="img/attracties/philipp-potocnik-nmVzQqgl-pc-unsplash.jpg" alt="Speedy XL">
+                    </div>
+                        <h3>----</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
                     </div>
                 </div>
                 
                 <div class="attraction-card">
                     <div class="card-image">
                         <!-- Placeholder voor attractie afbeelding -->
+                         <div class="card-image">
+                        <img src="img/attracties/brandon-hoogenboom-P0MX2XCqbFc-unsplash.jpg" alt="Speedy XL">
+                    </div>
+                        <h3>----</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
                     </div>
                 </div>
                 
@@ -60,18 +70,33 @@ require_once 'admin/backend/config.php';
                 <div class="attraction-card">
                     <div class="card-image">
                         <!-- Placeholder voor attractie afbeelding -->
+                         <div class="card-image">
+                        <img src="img/attracties/steve-doig-Pm8PTvvEU1w-unsplash.jpg" alt="Speedy XL">
+                    </div>
+                        <h3>----</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                         <div class="card-image">
+                        <img src="img/attracties/laurie-byrne-EtKSaG-PRbY-unsplash.jpg" alt="Speedy XL">
+                    </div>
+                        <h3>----</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
                     </div>
                 </div>
                 
                 <div class="attraction-card">
                     <div class="card-image">
                         <!-- Placeholder voor attractie afbeelding -->
+                         <div class="card-image">
+                        <img src="img/attracties/rusty-watson-jlWKDeU83nw-unsplash.jpg" alt="Speedy XL">
                     </div>
-                </div>
-                
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
+                        <h3>----</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
                     </div>
                 </div>
                 
@@ -91,12 +116,22 @@ require_once 'admin/backend/config.php';
                 <div class="attraction-card">
                     <div class="card-image">
                         <!-- Placeholder voor attractie afbeelding -->
+                         <div class="card-image">
+                        <img src="img/attracties/adger-kang-oiyzr-SgjBY-unsplash.jpg" alt="Speedy XL">
+                    </div>
+                        <h3>----</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
                     </div>
                 </div>
                 
                 <div class="attraction-card">
                     <div class="card-image">
                         <!-- Placeholder voor attractie afbeelding -->
+                         <div class="card-image">
+                        <img src="img/attracties/alex-kalinin-6gYjwD4s9xk-unsplash.jpg" alt="Speedy XL">
+                    </div>
+                        <h3>----</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
                     </div>
                 </div>
             </div>
