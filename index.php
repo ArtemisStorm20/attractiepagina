@@ -39,20 +39,20 @@ require_once 'admin/backend/config.php';
                     </div>
                 </div>
                 
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+                
                 <div class="attraction-card featured">
                     <div class="card-image">
-                        <img src="<?php echo $base_url; ?>/images/speedy-xl.jpg" alt="Speedy XL">
+                        <img src="img/attracties/chris-slupski-QLqIqIhMiNs-unsplash.jpg" alt="Speedy XL">
                     </div>
                     <div class="card-content">
                         <h3>Speedy XL</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do.</p>
                         <p class="height-requirement">120cm minimale lengte</p>
-                    </div>
-                </div>
-                
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
                     </div>
                 </div>
                 
@@ -78,7 +78,7 @@ require_once 'admin/backend/config.php';
                 <!-- Derde rij -->
                 <div class="attraction-card adventureland">
                     <div class="card-image">
-                        <img src="<?php echo $base_url; ?>/images/speedy-xl-adventure.jpg" alt="Speedy XL">
+                        <img src="img/attracties/jeriden-villegas-XrDVROYUTOs-unsplash.jpg" alt="Speedy XL">
                     </div>
                     <div class="card-content">
                         <span class="land-tag">ADVENTURELAND</span>
