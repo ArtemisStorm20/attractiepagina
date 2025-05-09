@@ -7,7 +7,7 @@ require_once 'admin/backend/config.php';
 <html lang="nl">
 
 <head>
-    <title>Attractiepagina</title>
+    <title>Developerland / Attracties</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,11 +21,85 @@ require_once 'admin/backend/config.php';
 
     <?php require_once 'header.php'; ?>
     <div class="container content">
-        <aside>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia modi dolore magnam! Iste libero voluptatum autem, sapiente ullam earum nostrum sed magnam vel laboriosam quibusdam, officia, esse vitae dignissimos nulla?
+        <aside class="sidebar">
+            <div class="search-box">
+                <input type="text" placeholder="Zoeken..." class="search-input">
+                <input type="text" placeholder="Filter..." class="search-input">
+                <input type="text" placeholder="Sorteren..." class="search-input">
+                <button class="search-button">🔍</button>
+            </div>
         </aside>
         <main>
-            <!-- hier komen de attractiekaartjes -->
+            <h1>Developerland / Attracties</h1>
+            <div class="attractions-grid">
+                <!-- Eerste rij -->
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+                
+                <div class="attraction-card featured">
+                    <div class="card-image">
+                        <img src="<?php echo $base_url; ?>/images/speedy-xl.jpg" alt="Speedy XL">
+                    </div>
+                    <div class="card-content">
+                        <h3>Speedy XL</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do.</p>
+                        <p class="height-requirement">120cm minimale lengte</p>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+                
+                <!-- Tweede rij -->
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+                
+                <!-- Derde rij -->
+                <div class="attraction-card adventureland">
+                    <div class="card-image">
+                        <img src="<?php echo $base_url; ?>/images/speedy-xl-adventure.jpg" alt="Speedy XL">
+                    </div>
+                    <div class="card-content">
+                        <span class="land-tag">ADVENTURELAND</span>
+                        <h3>Speedy XL</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
+                        <a href="#" class="fast-pass-button">FAST PASS</a>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="card-image">
+                        <!-- Placeholder voor attractie afbeelding -->
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
