@@ -42,7 +42,7 @@ $rides = $statement->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach ($rides as $ride): ?>
                     <div class="attraction-card <?php echo htmlspecialchars($ride['themeland']); ?>">
                         <div class="card-image">
-                            <img src="img/attracties/<?php echo htmlspecialchars($ride['image'] ?? 'default.jpg'); ?>" alt="<?php echo htmlspecialchars($ride['title']); ?>">
+                            <img src="img/attracties/<?php echo htmlspecialchars($ride['img_file'] ?? 'default.jpg'); ?>" alt="<?php echo htmlspecialchars($ride['title']); ?>">
                         </div>
                         <div class="card-content">
                             <h3><?php echo htmlspecialchars($ride['title']); ?></h3>
