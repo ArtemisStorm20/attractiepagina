@@ -1,6 +1,13 @@
 <?php
 session_start();
 require_once 'admin/backend/config.php';
+require_once 'admin/backend/conn.php';
+
+// Fetch rides from database
+$query = "SELECT * FROM rides";
+$statement = $conn->prepare($query);
+$statement->execute();
+$rides = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>
@@ -32,108 +39,23 @@ require_once 'admin/backend/config.php';
         <main>
             <h1>Developerland / Attracties</h1>
             <div class="attractions-grid">
-                <!-- Eerste rij -->
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
-                         <div class="card-image">
-                        <img src="img/attracties/philipp-potocnik-nmVzQqgl-pc-unsplash.jpg" alt="Speedy XL">
+                <?php foreach ($rides as $ride): ?>
+                    <div class="attraction-card <?php echo htmlspecialchars($ride['themeland']); ?>">
+                        <div class="card-image">
+                            <img src="img/attracties/<?php echo htmlspecialchars($ride['image'] ?? 'default.jpg'); ?>" alt="<?php echo htmlspecialchars($ride['title']); ?>">
+                        </div>
+                        <div class="card-content">
+                            <h3><?php echo htmlspecialchars($ride['title']); ?></h3>
+                            <p><?php echo htmlspecialchars($ride['description']); ?></p>
+                            <?php if (!empty($ride['min_length'])): ?>
+                                <p class="height-requirement"><?php echo htmlspecialchars($ride['min_length']); ?>cm minimale lengte</p>
+                            <?php endif; ?>
+                            <?php if (!empty($ride['fast_pass']) && $ride['fast_pass'] == 1): ?>
+                                <a href="#" class="fast-pass-button">FAST PASS</a>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                        <h3>----</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                    </div>
-                </div>
-                
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
-                         <div class="card-image">
-                        <img src="img/attracties/brandon-hoogenboom-P0MX2XCqbFc-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                        <h3>----</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                    </div>
-                </div>
-                
-                <div class="attraction-card featured">
-                    <div class="card-image">
-                        <img src="img/attracties/chris-slupski-QLqIqIhMiNs-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                    <div class="card-content">
-                        <h3>Speedy XL</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do.</p>
-                        <p class="height-requirement">120cm minimale lengte</p>
-                    </div>
-                </div>
-                
-                <!-- Tweede rij -->
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
-                         <div class="card-image">
-                        <img src="img/attracties/steve-doig-Pm8PTvvEU1w-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                        <h3>----</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                    </div>
-                </div>
-
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
-                         <div class="card-image">
-                        <img src="img/attracties/laurie-byrne-EtKSaG-PRbY-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                        <h3>----</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                    </div>
-                </div>
-                
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
-                         <div class="card-image">
-                        <img src="img/attracties/rusty-watson-jlWKDeU83nw-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                        <h3>----</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                    </div>
-                </div>
-                
-                <!-- Derde rij -->
-                <div class="attraction-card adventureland">
-                    <div class="card-image">
-                        <img src="img/attracties/jeriden-villegas-XrDVROYUTOs-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                    <div class="card-content">
-                        <span class="land-tag">ADVENTURELAND</span>
-                        <h3>Speedy XL</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                        <a href="#" class="fast-pass-button">FAST PASS</a>
-                    </div>
-                </div>
-                
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
-                         <div class="card-image">
-                        <img src="img/attracties/adger-kang-oiyzr-SgjBY-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                        <h3>----</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                    </div>
-                </div>
-                
-                <div class="attraction-card">
-                    <div class="card-image">
-                        <!-- Placeholder voor attractie afbeelding -->
-                         <div class="card-image">
-                        <img src="img/attracties/alex-kalinin-6gYjwD4s9xk-unsplash.jpg" alt="Speedy XL">
-                    </div>
-                        <h3>----</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur ut labore adipiscing elit, sed do</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </main>
     </div>
